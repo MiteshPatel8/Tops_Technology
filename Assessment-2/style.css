@@ -1,0 +1,28 @@
+#psw {
+    padding: 5px 10px;
+    width: 100px;
+}
+
+.header {
+    width: max-content;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weakpassword {
+    background-color: red;
+    color: white;
+}
+
+.strongpassword {
+    background-color: green;
+    color: white;
+}
+
+.mediumpassword {
+    background-color: yellow;
+}
