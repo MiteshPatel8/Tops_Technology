@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><span class="error" id="nameError"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><span class="error" id="emailError"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><span class="error" id="passwordError"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var isFormValid = true;
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            document.getElementById('nameError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+
+            if (name === '') {
+                document.getElementById('nameError').innerText = 'Name is required.';
+                isFormValid = false;
+            }
+
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email.match(emailPattern)) {
+                document.getElementById('emailError').innerText = 'Invalid email address.';
+                isFormValid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById('passwordError').innerText = 'Password must be at least 6 characters.';
+                isFormValid = false;
+            }
+
+            return isFormValid;
+        }
+    </script>
+</body>
+</html>

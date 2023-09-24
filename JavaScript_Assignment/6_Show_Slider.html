@@ -1,0 +1,30 @@
+<!doctype html>  
+<html lang="en">  
+   <head>  
+      <meta charset="utf-8">  
+      <title>Slider</title>  
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      <script>  
+         $(function() {  
+            $( "#slider" ).slider({  
+               orientation:"horizontal",  
+               value:10,  
+               slide: function( event, ui ) {  
+                  $( "#minval" ).val( ui.value );  
+               }      
+            });  
+            $( "#minval" ).val( $( "#slider" ).slider( "value" ) );  
+         });  
+      </script>  
+   </head>  
+   <body>  
+         <p>  
+            <label for="minval">Minumum value:</label>  
+            <input type="text" id="minval"   
+               style="border:0; color:red; font-weight:bold;">  
+         </p>  
+         <div id="slider"></div>  
+   </body>  
+</html>  

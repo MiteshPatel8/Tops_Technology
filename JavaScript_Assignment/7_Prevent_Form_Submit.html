@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prevent Form Submission</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="inputField">Enter something:</label>
+    <input type="text" id="inputField" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
