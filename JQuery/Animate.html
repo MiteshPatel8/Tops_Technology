@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        .strike-through{
+            text-decoration: line-through;
+        }
+        .box{
+            display: block;
+            height: 50px;
+            width: 50px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p class="para strike-through">This is Paragraph</p>
+
+    <div class="box"></div>
+    <button class="animation-btn">Animate</button>
+    
+</body>
+<script>
+    $('.para').css('background-color', 'red');
+    $('p').addClass('bold');
+    $('p').removeClass('strike-through');
+
+    $('.animation-btn').click( function(){
+        $('.box').animate({
+            height : '400px',
+            width : '400px'
+        });
+    });
+</script>
+</html>-
